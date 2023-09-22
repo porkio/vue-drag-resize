@@ -396,8 +396,8 @@ export default {
                 bottom: { min: null, max: null },
             };
         },
-
-        stickDown(stick, ev, force = false) {
+        // 设置 force 为 true 可以解决拖拽失焦后需要再次点击才能 resize 的问题
+        stickDown(stick, ev, force = true) {
             if ((!this.isResizable || !this.active) && !force) {
                 return;
             }
